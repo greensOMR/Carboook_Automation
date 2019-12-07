@@ -8,7 +8,7 @@ Then User should verify the logo present in the header
 And User should verify the page title 'Carbook - Free Bootstrap 4 Template by Colorlib'
 And User should see Home Menu 
 And User should see About Menu
-And User should see Services Menu
+* User should see Services Menu
 And User should see pricing Menu
 And User should see Cars menu
 And User should see Blog menu

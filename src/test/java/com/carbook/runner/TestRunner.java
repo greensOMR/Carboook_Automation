@@ -21,17 +21,18 @@ import cucumber.api.junit.Cucumber;
 		"com.cucumber.listener.ExtentCucumberFormatter:src\\test\\resource\\com\\carbook\\extentreport\\report.html",
 
 		"pretty",
-		"json:src\\test\\resource\\com\\carbook\\extentreport\\cucumber.json" }, features = "src\\test\\java\\com\\carbook\\feature", glue = "com.carbook.stepdefintion", dryRun = false, strict = true, monochrome = true, tags = {
+		"json:src\\test\\resource\\com\\carbook\\extentreport\\cucumber.json" }, features = "src\\test\\java\\com\\carbook\\feature", glue = "com.carbook.stepdefintion", dryRun = true, strict = true, monochrome = true, tags = {
 				"@Carbook" })
 public class TestRunner {
 
 	public static WebDriver driver;
 
 	static Logger log = Logger.getLogger(TestRunner.class);
+
 	@BeforeClass
 	public static void driverInitialization() throws Exception, Throwable {
-	PropertyConfigurator.configure(
-			System.getProperty("user.dir") + "\\src\\test\\resource\\com\\carbook\\config\\log4j.properties");
+		PropertyConfigurator.configure(
+				System.getProperty("user.dir") + "\\src\\test\\resource\\com\\carbook\\config\\log4j.properties");
 
 		ConfigReader cr = new ConfigReader();
 		driver = BaseClass.gettingBrowser(cr.getBrowserName());
